@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firebase CRUD App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- 🔹 Login & Register Forms -->
+    <div id="authContainer" class="form-container">
+        <h1>Firebase CRUD App</h1>
+
+        <!-- 🔹 Registration Form -->
+        <div id="registerForm">
+            <h2>Register</h2>
+            <input type="email" id="registerEmail" placeholder="Email" required>
+            <input type="password" id="registerPassword" placeholder="Password" required>
+            <button onclick="registerUser()">Register</button>
+            <p>Already have an account? <button onclick="switchToLogin()">Login Instead</button></p>
+        </div>
+        
+        <!-- 🔹 Login Form -->
+        <div id="loginForm" class="hidden">
+            <h2>Login</h2>
+            <input type="email" id="loginEmail" placeholder="Email" required>
+            <input type="password" id="loginPassword" placeholder="Password" required>
+            <button onclick="loginUser()">Login</button>
+            <p>Don't have an account? <button onclick="switchToRegister()">Register Instead</button></p>
+        </div>
+    </div>
+    
+    <!-- 🔹 CRUD App -->
+    <div id="crudApp" class="form-container hidden">
+        <button onclick="logoutUser()" class="logout-btn">Logout</button>
+
+        <h1>Firebase CRUD App</h1>
+        <form id="personForm">
+            <input type="text" id="name" placeholder="Enter Name" required>
+            <input type="email" id="email" placeholder="Enter Email" required>
+            <button type="submit">Add Person</button>
+        </form>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="dataTable"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="app.js" type="module"></script>
+</body>
+</html>
